@@ -30,9 +30,12 @@ const trackInfo = {
 };
 
 function togglePlayPause() {
+  const playPauseIcon = document.querySelector(".play_pause_icon");
   if (mainAudio.paused) {
+    playPauseIcon.src = "./images/pause.svg";
     mainAudio.play();
   } else {
+    playPauseIcon.src = "./images/play.svg";
     mainAudio.pause();
   }
 }
@@ -81,6 +84,18 @@ function addBeepEvent(querySelector, trackPath) {
   addTrackEvent(querySelector, trackPath, playBeep);
 }
 
+function convertTime(time) {
+  let sec = time;
+  const hours = (sec - (sec % 3600)) / 3600;
+  sec = sec - hours * 3600;
+  const min = (sec - (sec % 60)) / 60;
+  sec = sec - min * 60;
+  if (hours) {
+    return `${hours}:${min}:${sec}`;
+  }
+  return `${min}:${sec}`;
+}
+
 window.addEventListener("load", () => {
   document
     .querySelector(".play-pause-button")
@@ -92,4 +107,39 @@ window.addEventListener("load", () => {
   addSoundEvent(".break", "break");
   addSoundEvent(".criminal", "criminal");
   addSoundEvent(".start_concert", "start_concert");
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const audioPlayer = mainAudio;
+  const currentTimeDisplay = document.getElementById("currentTime");
+  const durationDisplay = document.getElementById("duration");
+  const scroll = document.querySelector(".track_scroll");
+  const roller = document.querySelector(".track_roller");
+
+  // Функция для обновления отображаемого времени воспроизведения
+  function updateCurrentTime() {
+    const currentTime = Math.floor(audioPlayer.currentTime);
+    currentTimeDisplay.textContent = convertTime(currentTime);
+
+    const scrollWidth = scroll.clientWidth;
+    const duration = Math.floor(audioPlayer.duration);
+    const scrollPointToSec = scrollWidth / duration;
+
+    const rollerPosition = Math.floor(scrollPointToSec * currentTime);
+    console.log(
+      "scrollPointToSec * currentTime",
+      scrollPointToSec,
+      currentTime,
+      rollerPosition
+    );
+    roller.style.left = rollerPosition + "px";
+  }
+
+  // Подключаем события для обновления времени и длительности
+  audioPlayer.addEventListener("loadedmetadata", () => {
+    const duration = Math.floor(audioPlayer.duration);
+    durationDisplay.textContent = convertTime(duration);
+  });
+
+  audioPlayer.addEventListener("timeupdate", updateCurrentTime);
 });

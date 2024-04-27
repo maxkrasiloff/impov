@@ -17,10 +17,17 @@
         <div class="title">Два стула
           <span>DJ Mixer</span>
         </div>
-        <button class="play-pause-button"><img src="./images/play_pause.svg"></button>
+        <button class="play-pause-button"><img class="play_pause_icon" src="./images/play.svg"></button>
       </div>
       <div class="track_info">
         <div class="current_track">
+          В данный момент ничего не воспроизводится
+        </div>
+        <div class="d-flex nowrap">
+          <div class="track_scroll">
+            <div class="track_roller"></div>
+          </div>
+          <div class="timer"><span id="currentTime">0</span>/<span id="duration">0</span></div>
         </div>
       </div>
     </div>

@@ -58,6 +58,8 @@ body {
 .current_track {
   color: #0009;
   text-align: center;
+  height: 1rem;
+  line-height: 1rem;
 }
 
 .block.header .title {
@@ -131,10 +133,43 @@ body {
   height: 32px;
 }
 
+.track_scroll {
+  margin-top: .5rem;
+  height: 4px;
+  background-color: #0003;
+  width: 100%;
+  border-radius: 4px;
+  position: relative;
+}
+
+.track_roller {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background-color: #fff;
+  top: -6px;
+  box-shadow: 0 0 .5rem #0003;
+  transition: 1s;
+}
+
+.timer {
+  color: #0003;
+  padding-left: 1rem;
+  font-size: .8rem;
+}
+
+.timer span {
+  color: #0007;
+}
 
 .d-flex {
   display: flex;
   flex-wrap: wrap;
+}
+
+.nowrap {
+  flex-wrap: nowrap;
 }
 
 .gap-12 {
@@ -152,5 +187,17 @@ body {
     padding: .75rem 1.5rem;
     border-radius: 3rem;
   }
+
+  .root {
+    padding-bottom: 7rem;
+  }
   
+  .header {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+  }
 }
