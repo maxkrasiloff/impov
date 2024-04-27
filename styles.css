@@ -11,7 +11,7 @@ body {
   width: 100vw;  /* Задаёт ширину элемента во весь экран */
   background: linear-gradient(270deg, #ff8a00, #e52e71); /* Начальные цвета градиента */
   background-size: 400% 400%;
-  animation: Gradient 10s ease infinite;
+  animation: Gradient 30s ease infinite;
   position: fixed;
   top: 0;
   left: 0;
@@ -104,16 +104,18 @@ body {
   background-color: #fff7;
   border-radius: 1rem;
   box-shadow: 0 0 .5rem #0003;
-  border: 0;
+  border: 1px solid #fff8;
   cursor: pointer;
 }
 
 .success {
+  border: 1px solid #22aa22;
   background-color: #33aa33;
   color: #fff;
 }
 
 .error {
+  border: 1px solid #aa2222;
   background-color: #aa3333;
   color: #fff;
 }
@@ -146,9 +148,9 @@ body {
   }
 
   .play-button {
-    font-size: 24px;
-    padding: 1rem 2rem;
-    border-radius: 4rem;
+    font-size: 18px;
+    padding: .75rem 1.5rem;
+    border-radius: 3rem;
   }
   
 }
