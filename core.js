@@ -41,6 +41,7 @@ function togglePlayPause() {
 }
 
 function playPause(trackKey) {
+  document.querySelector(".stop").classList.add("active");
   const trackPath = path[trackKey];
   if (activeAudio !== trackPath) {
     activeAudio = trackPath;
@@ -100,6 +101,12 @@ window.addEventListener("load", () => {
   document
     .querySelector(".play-pause-button")
     .addEventListener("click", togglePlayPause);
+  document.querySelector(".stop-wrapper").addEventListener("click", () => {
+    mainAudio.pause();
+    mainAudio.currentTime = 0;
+    document.querySelector(".stop").classList.remove("active");
+  });
+
   addBeepEvent(".success", path.complete);
   addBeepEvent(".error", path.error);
   addBeepEvent(".end", path.end);

@@ -122,7 +122,7 @@ body {
   color: #fff;
 }
 
-.play-pause-button {
+.play-pause-button, .stop-button {
   background-color: transparent;
   border: 0;
   cursor: pointer;
@@ -131,6 +131,25 @@ body {
 .play-pause-button img {
   width: 32px;
   height: 32px;
+}
+
+.stop-wrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stop {
+  width: 16px;
+  height: 16px;
+  background-color: #0003;
+}
+
+.stop.active {
+  background-color: #000;
+
 }
 
 .track_scroll {
