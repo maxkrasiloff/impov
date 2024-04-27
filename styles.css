@@ -11,7 +11,7 @@ body {
   width: 100vw;  /* Задаёт ширину элемента во весь экран */
   background: linear-gradient(270deg, #ff8a00, #e52e71); /* Начальные цвета градиента */
   background-size: 400% 400%;
-  animation: Gradient 45s ease infinite;
+  animation: Gradient 10s ease infinite;
   position: fixed;
   top: 0;
   left: 0;
@@ -77,7 +77,8 @@ body {
   background-color: #fff7;
   border-radius: 1rem;
   backdrop-filter: blur(4px);
-
+  box-shadow: 0 0 1rem #0003;
+  border: 1px solid #fff8;
 }
 
 .block .title {
