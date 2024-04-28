@@ -96,10 +96,14 @@ function convertTime(time) {
   sec = sec - hours * 3600;
   const min = (sec - (sec % 60)) / 60;
   sec = sec - min * 60;
+  const hoursString = hours > 10 ? hours : `0${hours}`;
+  const minString = min > 10 ? min : `0${min}`;
+  const secString = sec > 10 ? sec : `0${sec}`;
+
   if (hours) {
-    return `${hours}:${min}:${sec}`;
+    return `${hoursString}:${minString}:${secString}`;
   }
-  return `${min}:${sec}`;
+  return `${minString}:${secString}`;
 }
 
 window.addEventListener("load", () => {
