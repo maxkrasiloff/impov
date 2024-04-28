@@ -12,7 +12,7 @@ const path = {
   start: "./audio/start_concert.weba",
   criminal: "./audio/criminal.weba",
   start_concert: "./audio/start_concert.mp3",
-  mortal_kombat: "./audio/mortal_kombat.mp3",
+  mortal_kombat: "./audio/mortal_kombat_short.mp3",
 };
 
 const trackInfo = {
