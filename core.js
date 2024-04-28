@@ -106,7 +106,26 @@ function convertTime(time) {
   return `${minString}:${secString}`;
 }
 
+function toggleMode() {
+  document.body.classList.toggle("drum");
+  localStorage.setItem("mode", document.body.className);
+}
+function changeMode(mode) {
+  if (mode === "player") {
+    document.body.className.remove("drum");
+  } else {
+    document.body.classList.add("drum");
+  }
+}
+
 window.addEventListener("load", () => {
+  if (localStorage.getItem("mode")) {
+    document.body.classList.add(localStorage.getItem("mode"));
+  }
+
+  document
+    .querySelector("#change_display_mode")
+    .addEventListener("click", toggleMode);
   document
     .querySelector(".play-pause-button")
     .addEventListener("click", togglePlayPause);
