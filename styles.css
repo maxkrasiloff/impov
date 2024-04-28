@@ -5,8 +5,7 @@ body {
   font-size: 14px;
 }
 
-
-.glazmoformiz {
+.background {
   height: 100vh; /* Задаёт высоту элемента во весь экран */
   width: 100vw;  /* Задаёт ширину элемента во весь экран */
   background: linear-gradient(270deg, #ff8a00, #e52e71); /* Начальные цвета градиента */
@@ -79,7 +78,7 @@ body {
   background-color: #fff7;
   border-radius: 1rem;
   backdrop-filter: blur(4px);
-  box-shadow: 0 0 1rem #0003;
+  box-shadow: 0 0 1rem #0009;
   border: 1px solid #fff8;
 }
 
@@ -105,7 +104,7 @@ body {
   padding: .5rem 1rem;
   background-color: #fff7;
   border-radius: 1rem;
-  box-shadow: 0 0 .5rem #0003;
+  box-shadow: 0 0 .5rem #0007;
   border: 1px solid #fff8;
   cursor: pointer;
 }
@@ -168,7 +167,7 @@ body {
   border-radius: 16px;
   background-color: #fff;
   top: -6px;
-  box-shadow: 0 0 .5rem #0003;
+  box-shadow: 0 0 .5rem #0007;
   transition: 1s;
 }
 
@@ -195,6 +194,31 @@ body {
   gap: 12px;
 }
 
+.drum .background {
+  background: #333 !important;
+}
+
+.drum .block .content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.drum .block .content .play-button {
+  width: 128px;
+  height: 128px;
+}
+
+.button {
+  padding: .5rem 1rem;
+  border: 1px solid #0003;
+  border-radius: 1rem;
+  background-color: #fff7;
+  box-shadow: 0 0 .5rem #0007;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 760px) {
   .grid-2 {
     display: flex;
@@ -218,5 +242,14 @@ body {
     left: 0;
     right: 0;
     border-radius: 0;
+  }
+
+  .drum .block .content .play-button {
+    font-size: .7rem;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    padding: 0;
+    border-radius: 8px;
   }
 }
