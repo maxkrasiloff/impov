@@ -244,6 +244,14 @@ body {
     border-radius: 0;
   }
 
+  .block.header .title {
+    font-size: 1.2rem;
+  }
+
+  .block.header .button {
+    margin-right: .5rem;
+  }
+
   .drum .block .content .play-button {
     font-size: .7rem;
     width: 80px;
