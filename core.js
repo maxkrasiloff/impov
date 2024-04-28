@@ -12,12 +12,17 @@ const path = {
   start: "./audio/start_concert.weba",
   criminal: "./audio/criminal.weba",
   start_concert: "./audio/start_concert.mp3",
+  mortal_kombat: "./audio/mortal_kombat.mp3",
 };
 
 const trackInfo = {
   start_concert: {
     title: "Начало концерта",
-    description: "Тема из звездных войн",
+    description: "Mortal Kombat",
+  },
+  mortal_kombat: {
+    title: "Начало концерта",
+    description: "Mortal Kombat",
   },
   criminal: {
     title: "Следователь",
@@ -113,7 +118,7 @@ window.addEventListener("load", () => {
 
   addSoundEvent(".break", "break");
   addSoundEvent(".criminal", "criminal");
-  addSoundEvent(".start_concert", "start_concert");
+  addSoundEvent(".start_concert", "mortal_kombat");
 });
 
 document.addEventListener("DOMContentLoaded", function () {
